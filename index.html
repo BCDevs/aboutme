@@ -9,7 +9,7 @@
 	</head>
 	<div class= "background">
 		<div class="layer>"
-	<body class="is-preload">
+	<body class="is-preload" class="dark">
 		<div id="wrapper">
 			<div id="bg"></div>
 			<div id="overlay"></div>
@@ -34,6 +34,10 @@
 
 				<!-- Footer -->
 					<footer id="footer">
+<p>
+  <a style="cursor: pointer" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'bright' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
+    title="Switch to light or dark theme">🌓 Light|dark mode</a>
+</p>
 						<span class="copyright">&copy; Personal. Design: Salman.</span>
 					</footer>
 
@@ -47,6 +51,9 @@
 			window.onload = function() { document.body.classList.remove('is-preload'); }
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
+			document.addEventListener('DOMContentLoaded', (event) => {
+  ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')
+})
 		</script>
 	</body>
 </html>

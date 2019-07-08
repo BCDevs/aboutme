@@ -35,10 +35,6 @@
 
 <!-- Footer -->
 <footer id="footer">
- <p>
-  <a style="cursor: pointer" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'bright' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')"
-   title="Switch to light or dark theme">🌓 Light|Dark</a>
-</p>
 <span class="copyright">&copy; Salman Dabbakuti</span>
 </footer>
   </div>
@@ -47,11 +43,6 @@
 window.onload = function() { document.body.classList.remove('is-preload'); }
 window.ontouchmove = function() { return false; }
 window.onorientationchange = function() { document.body.scrollTop = 0; }
-
-
-document.addEventListener('DOMContentLoaded', (event) => {
-  ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')
-})
 </script>
 		
 </body>
